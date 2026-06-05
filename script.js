@@ -518,13 +518,17 @@ function renderTrack(container, items, emptyMessage) {
     return;
   }
 
+  const fragment = document.createDocumentFragment();
+
   items.forEach((product, index) => {
     const li = document.createElement("li");
     const loading = index === 0 ? "eager" : "lazy";
     const fetchPriority = index === 0 ? "high" : "auto";
     li.innerHTML = cardTemplate(product, loading, fetchPriority);
-    container.appendChild(li);
+    fragment.appendChild(li);
   });
+
+  container.appendChild(fragment);
 }
 
 function renderProducts(searchTerm = "") {

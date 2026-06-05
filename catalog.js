@@ -464,7 +464,9 @@ function renderCatalog() {
     return;
   }
 
-  grid.innerHTML = filtered.map((product, index) => cardTemplate(product, index)).join("");
+  const template = document.createElement("template");
+  template.innerHTML = filtered.map((product, index) => cardTemplate(product, index)).join("");
+  grid.replaceChildren(template.content.cloneNode(true));
 }
 
 function toggleAccountMenu(forceOpen) {
