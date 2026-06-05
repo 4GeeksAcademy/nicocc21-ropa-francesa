@@ -316,6 +316,7 @@ let currentLanguage = storedLanguage && Object.prototype.hasOwnProperty.call(tra
   ? storedLanguage
   : "es";
 let currentModalProductId = null;
+let searchDebounceId = null;
 
 function t(path) {
   const locale = translations[currentLanguage] || translations.es;
@@ -377,7 +378,7 @@ function formatPrice(value) {
   }).format(value);
 }
 
-function cardTemplate(product) {
+function cardTemplate(product, imageLoading = "lazy", imageFetchPriority = "auto") {
   const hasImages = Array.isArray(product.images) && product.images.length > 0;
   const firstImage = hasImages ? product.images[0] : null;
   const productName = getProductName(product);
@@ -385,7 +386,7 @@ function cardTemplate(product) {
   const imagePanel = hasImages
     ? `
       <div class="card-image card-image-gallery">
-        <img src="${firstImage.src}" alt="${firstImage.alt}" loading="lazy" referrerpolicy="no-referrer" />
+        <img src="${firstImage.src}" alt="${firstImage.alt}" width="960" height="1200" loading="${imageLoading}" fetchpriority="${imageFetchPriority}" decoding="async" referrerpolicy="no-referrer" />
       </div>
     `
     : `<div class="card-image" style="background: ${product.visual}"></div>`;
@@ -517,9 +518,11 @@ function renderTrack(container, items, emptyMessage) {
     return;
   }
 
-  items.forEach((product) => {
+  items.forEach((product, index) => {
     const li = document.createElement("li");
-    li.innerHTML = cardTemplate(product);
+    const loading = index === 0 ? "eager" : "lazy";
+    const fetchPriority = index === 0 ? "high" : "auto";
+    li.innerHTML = cardTemplate(product, loading, fetchPriority);
     container.appendChild(li);
   });
 }
@@ -554,7 +557,10 @@ searchInput.addEventListener("input", (event) => {
     return;
   }
 
-  renderProducts(target.value);
+  window.clearTimeout(searchDebounceId);
+  searchDebounceId = window.setTimeout(() => {
+    renderProducts(target.value);
+  }, 120);
 });
 
 accountBtn.addEventListener("click", () => {

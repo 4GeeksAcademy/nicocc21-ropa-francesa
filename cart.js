@@ -94,16 +94,17 @@ function renderCart() {
   if (!cartProducts.length) {
     cartList.innerHTML = `<li class="catalog-empty">${t("empty")}</li>`;
   } else {
-    cartProducts.forEach((item) => {
+    cartProducts.forEach((item, index) => {
       const li = document.createElement("li");
       const lineTotal = item.price * item.qty;
       const itemName = typeof item.names === "object" && item.names !== null
         ? item.names[currentLanguage] || item.names.es || item.id
         : item.id;
+      const loading = index < 2 ? "eager" : "lazy";
 
       li.className = "cart-item";
       li.innerHTML = `
-        <img src="${item.image}" alt="${itemName}" class="cart-thumb" />
+        <img src="${item.image}" alt="${itemName}" class="cart-thumb" width="320" height="320" loading="${loading}" decoding="async" />
         <div class="cart-item-copy">
           <h3>${itemName}</h3>
           <p>${t("unitPrice")}: ${formatPrice(item.price)}</p>

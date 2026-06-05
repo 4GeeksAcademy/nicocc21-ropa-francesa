@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09070c" />
     <title data-i18n="meta.title">Desordre | Catalogo</title>
     <meta
       name="description"
@@ -15,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="assets/images/203803645-un-conjunto-de-zapatos-de-primavera-y-verano-para-mujer-zapatillas-de-deporte-sandalias-de.webp" fetchpriority="high" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -145,7 +147,7 @@
         <button id="catalog-modal-close" class="product-modal-close" type="button" data-i18n="modal.close">Cerrar</button>
         <h2 id="catalog-modal-title" class="product-modal-title"></h2>
         <div class="product-modal-image-wrap">
-          <img id="catalog-modal-image" src="" alt="" />
+          <img id="catalog-modal-image" src="" alt="" width="1200" height="1500" decoding="async" />
         </div>
         <div class="product-modal-nav" aria-label="Navegacion de imagenes" data-i18n-aria-label="modal.navAria">
           <button id="catalog-modal-prev" class="card-btn" type="button" data-i18n="modal.prev">Anterior</button>
@@ -155,6 +157,6 @@
       </div>
     </div>
 
-    <script src="catalog.js"></script>
+    <script src="catalog.js" defer></script>
   </body>
 </html>

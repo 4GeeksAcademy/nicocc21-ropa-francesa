@@ -288,6 +288,7 @@ let currentLanguage = storedLanguage && Object.prototype.hasOwnProperty.call(tra
 
 let lastVisibleProducts = [];
 let currentModalIndex = -1;
+let searchDebounceId = null;
 
 const grid = document.getElementById("catalog-grid");
 const categoryFilter = document.getElementById("category-filter");
@@ -366,14 +367,16 @@ function localizeStaticContent() {
   document.title = t("meta.title");
 }
 
-function cardTemplate(product) {
+function cardTemplate(product, index) {
   const categoryLabel = t(`categories.${product.category}`);
   const sizeLabel = product.size === "all" ? t("catalog.sizeUnique") : product.size;
+  const loading = index < 4 ? "eager" : "lazy";
+  const fetchPriority = index === 0 ? "high" : "auto";
 
   return `
     <li class="catalog-card">
       <div class="catalog-image">
-        <img src="${product.image}" alt="${getProductName(product)}" loading="lazy" referrerpolicy="no-referrer" data-product-id="${product.id}" />
+        <img src="${product.image}" alt="${getProductName(product)}" width="960" height="1200" loading="${loading}" fetchpriority="${fetchPriority}" decoding="async" referrerpolicy="no-referrer" data-product-id="${product.id}" />
       </div>
       <div class="catalog-body">
         <h3>${getProductName(product)}</h3>
@@ -461,7 +464,7 @@ function renderCatalog() {
     return;
   }
 
-  grid.innerHTML = filtered.map((product) => cardTemplate(product)).join("");
+  grid.innerHTML = filtered.map((product, index) => cardTemplate(product, index)).join("");
 }
 
 function toggleAccountMenu(forceOpen) {
@@ -532,7 +535,12 @@ if (sizeFilter instanceof HTMLSelectElement) {
 }
 
 if (searchInput instanceof HTMLInputElement) {
-  searchInput.addEventListener("input", renderCatalog);
+  searchInput.addEventListener("input", () => {
+    window.clearTimeout(searchDebounceId);
+    searchDebounceId = window.setTimeout(() => {
+      renderCatalog();
+    }, 120);
+  });
 }
 
 if (accountBtn instanceof HTMLButtonElement) {
