@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Désordre | Home</title>
+    <meta
+      name="description"
+      content="Home de ecommerce para marca de ropa moderna y visual."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Principal">
+        <a class="logo" href="#" aria-label="Inicio">
+          <span class="logo-symbol" aria-hidden="true">
+            <svg viewBox="0 0 120 48" role="img" aria-label="Trazo neon del logo">
+              <path d="M8 37 L34 14 L58 28 L83 11 L108 30" />
+            </svg>
+          </span>
+          <span class="logo-text">Désordre</span>
+        </a>
+
+        <form class="search-wrap" role="search" aria-label="Buscar productos">
+          <label for="search-input" class="sr-only" data-i18n="nav.searchLabel">Buscar producto</label>
+          <input
+            id="search-input"
+            name="search"
+            type="search"
+            placeholder="Buscar prendas, colores o colecciones"
+            data-i18n-placeholder="nav.searchPlaceholder"
+            autocomplete="off"
+          />
+        </form>
+
+        <div class="language-wrap">
+          <label for="language-select" class="sr-only" data-i18n="nav.languageLabel">Idioma</label>
+          <select id="language-select" class="language-select" aria-label="Seleccionar idioma">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+
+        <div class="account-menu">
+          <button id="account-btn" class="account-btn" type="button" aria-expanded="false" aria-controls="account-dropdown" data-i18n="nav.accountBtn">
+            Cuenta
+          </button>
+          <ul id="account-dropdown" class="account-dropdown" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="#" data-i18n="nav.accountProfile">Mi perfil</a></li>
+            <li role="none"><a role="menuitem" href="#" data-i18n="nav.accountOrders">Pedidos</a></li>
+            <li role="none"><a role="menuitem" href="#" data-i18n="nav.accountFavorites">Favoritos</a></li>
+            <li role="none"><a role="menuitem" href="cart.html" data-i18n="nav.accountCart">Carrito</a></li>
+            <li role="none"><a role="menuitem" href="#" data-i18n="nav.accountLogout">Cerrar sesion</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="badge" data-i18n="hero.badge">Campana destacada</p>
+          <h1 id="hero-title" data-i18n="hero.title">Color en movimiento para una nueva generacion urbana</h1>
+          <p data-i18n="hero.copy">
+            Descubre la linea mas vibrante de la temporada: siluetas modernas,
+            materiales comodos y combinaciones visuales con mucha energia.
+          </p>
+          <a class="cta" href="#new-launches" data-i18n="hero.cta">Ver lanzamientos</a>
+          <a class="cta" href="catalog.html" data-i18n="hero.catalogCta">Ir al catalogo</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="shape shape-a"></div>
+          <div class="shape shape-b"></div>
+          <div class="shape shape-c"></div>
+        </div>
+      </section>
+
+      <section class="product-section" id="new-launches" aria-labelledby="new-title">
+        <header class="section-head">
+          <h2 id="new-title" data-i18n="sections.newTitle">Nuevos lanzamientos</h2>
+          <p data-i18n="sections.newDesc">Las piezas recien llegadas a la coleccion.</p>
+        </header>
+        <ul id="new-list" class="product-track" aria-live="polite"></ul>
+      </section>
+
+      <section class="product-section" id="best-sellers" aria-labelledby="best-title">
+        <header class="section-head">
+          <h2 id="best-title" data-i18n="sections.bestTitle">Mas vendidos</h2>
+          <p data-i18n="sections.bestDesc">Los favoritos de la comunidad esta semana.</p>
+        </header>
+        <ul id="best-list" class="product-track" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Pie de pagina">
+      <section class="footer-col" aria-labelledby="footer-categories">
+        <h2 id="footer-categories" data-i18n="footer.categoriesTitle">Categorias</h2>
+        <ul>
+          <li><a href="#" data-i18n="footer.catShoes">Calzado</a></li>
+          <li><a href="#" data-i18n="footer.catShirts">Camisas</a></li>
+          <li><a href="#" data-i18n="footer.catPants">Pantalones</a></li>
+          <li><a href="#" data-i18n="footer.catAccessories">Accesorios</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col" aria-labelledby="footer-legal">
+        <h2 id="footer-legal" data-i18n="footer.legalTitle">Legal</h2>
+        <ul>
+          <li><a href="#" data-i18n="footer.terms">Terminos y condiciones</a></li>
+          <li><a href="#" data-i18n="footer.privacy">Politica de privacidad</a></li>
+          <li><a href="#" data-i18n="footer.about">Sobre la marca</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col" aria-labelledby="footer-contact">
+        <h2 id="footer-contact" data-i18n="footer.contactTitle">Contacto</h2>
+        <ul>
+          <li><a href="mailto:hello@desordre.com">hello@desordre.com</a></li>
+          <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+          <li data-i18n="footer.location">Paris, Francia</li>
+        </ul>
+      </section>
+
+      <section class="footer-col footer-col-work" aria-labelledby="footer-work">
+        <h2 id="footer-work" data-i18n="footer.workTitle">Trabaja con nosotros</h2>
+        <a class="work-link" href="register.html" target="_blank" rel="noopener noreferrer" data-i18n="footer.workCta">
+          Ir a registro
+        </a>
+      </section>
+    </footer>
+
+    <div id="product-modal" class="product-modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" hidden>
+      <div class="product-modal-dialog">
+        <button id="product-modal-close" class="product-modal-close" type="button" data-i18n="modal.close">Cerrar</button>
+        <h2 id="product-modal-title" class="product-modal-title"></h2>
+        <div class="product-modal-image-wrap">
+          <img id="product-modal-image" src="" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

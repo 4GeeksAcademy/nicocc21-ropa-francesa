@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desordre | Carrito</title>
+    <meta name="description" content="Vista de carrito completa de Desordre." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Principal">
+        <a class="logo" href="index.html" aria-label="Inicio">
+          <span class="logo-symbol" aria-hidden="true">
+            <svg viewBox="0 0 120 48" role="img" aria-label="Trazo neon del logo">
+              <path d="M8 37 L34 14 L58 28 L83 11 L108 30" />
+            </svg>
+          </span>
+          <span class="logo-text">Desordre</span>
+        </a>
+
+        <form class="search-wrap" role="search" aria-label="Buscar productos">
+          <label for="cart-search" class="sr-only">Buscar producto</label>
+          <input id="cart-search" type="search" placeholder="Buscar prendas" autocomplete="off" />
+        </form>
+
+        <div class="language-wrap">
+          <label for="cart-language" class="sr-only">Idioma</label>
+          <select id="cart-language" class="language-select" aria-label="Seleccionar idioma">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+
+        <div class="account-menu">
+          <button id="cart-account-btn" class="account-btn" type="button" aria-expanded="false" aria-controls="cart-account-dropdown">Cuenta</button>
+          <ul id="cart-account-dropdown" class="account-dropdown" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="#">Mi perfil</a></li>
+            <li role="none"><a role="menuitem" href="#">Pedidos</a></li>
+            <li role="none"><a role="menuitem" href="#">Favoritos</a></li>
+            <li role="none"><a role="menuitem" href="cart.html">Carrito</a></li>
+            <li role="none"><a role="menuitem" href="#">Cerrar sesion</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="cart-main" aria-labelledby="cart-title">
+      <h1 id="cart-title">Carrito</h1>
+      <div class="cart-layout">
+        <section class="cart-list-wrap" aria-label="Productos en el carrito">
+          <ul id="cart-list" class="cart-list"></ul>
+        </section>
+
+        <aside class="cart-summary" aria-label="Totalizacion">
+          <h2>Resumen</h2>
+          <p><span>Prendas</span><strong id="items-value">0</strong></p>
+          <p><span>Subtotal</span><strong id="subtotal-value">0 EUR</strong></p>
+          <p><span>Impuestos</span><strong id="tax-value">0 EUR</strong></p>
+          <p class="cart-total"><span>Total</span><strong id="total-value">0 EUR</strong></p>
+          <a href="checkout.html" class="work-link">Comprar</a>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer" aria-label="Pie de pagina">
+      <section class="footer-col" aria-labelledby="footer-categories">
+        <h2 id="footer-categories">Categorias</h2>
+        <ul>
+          <li><a href="#">Calzado</a></li>
+          <li><a href="#">Camisas</a></li>
+          <li><a href="#">Pantalones</a></li>
+          <li><a href="#">Accesorios</a></li>
+        </ul>
+      </section>
+      <section class="footer-col" aria-labelledby="footer-legal">
+        <h2 id="footer-legal">Legal</h2>
+        <ul>
+          <li><a href="#">Terminos y condiciones</a></li>
+          <li><a href="#">Politica de privacidad</a></li>
+          <li><a href="#">Sobre la marca</a></li>
+        </ul>
+      </section>
+      <section class="footer-col" aria-labelledby="footer-contact">
+        <h2 id="footer-contact">Contacto</h2>
+        <ul>
+          <li><a href="mailto:hello@desordre.com">hello@desordre.com</a></li>
+          <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+          <li>Paris, Francia</li>
+        </ul>
+      </section>
+      <section class="footer-col footer-col-work" aria-labelledby="footer-links">
+        <h2 id="footer-links">Navegacion</h2>
+        <a class="work-link" href="catalog.html">Volver al catalogo</a>
+      </section>
+    </footer>
+
+    <script src="cart.js"></script>
+  </body>
+</html>

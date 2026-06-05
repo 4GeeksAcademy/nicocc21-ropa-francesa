@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desordre | Checkout</title>
+    <meta name="description" content="Proceso de compra en 3 pasos de Desordre." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Principal">
+        <a class="logo" href="index.html" aria-label="Inicio">
+          <span class="logo-symbol" aria-hidden="true">
+            <svg viewBox="0 0 120 48" role="img" aria-label="Trazo neon del logo">
+              <path d="M8 37 L34 14 L58 28 L83 11 L108 30" />
+            </svg>
+          </span>
+          <span class="logo-text">Desordre</span>
+        </a>
+
+        <form class="search-wrap" role="search" aria-label="Buscar productos">
+          <label for="checkout-search" class="sr-only">Buscar producto</label>
+          <input id="checkout-search" type="search" placeholder="Buscar prendas" autocomplete="off" />
+        </form>
+
+        <div class="language-wrap">
+          <label for="checkout-language" class="sr-only">Idioma</label>
+          <select id="checkout-language" class="language-select" aria-label="Seleccionar idioma">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+
+        <div class="account-menu">
+          <button id="checkout-account-btn" class="account-btn" type="button" aria-expanded="false" aria-controls="checkout-account-dropdown">Cuenta</button>
+          <ul id="checkout-account-dropdown" class="account-dropdown" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="#">Mi perfil</a></li>
+            <li role="none"><a role="menuitem" href="#">Pedidos</a></li>
+            <li role="none"><a role="menuitem" href="#">Favoritos</a></li>
+            <li role="none"><a role="menuitem" href="cart.html">Carrito</a></li>
+            <li role="none"><a role="menuitem" href="#">Cerrar sesion</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="checkout-main" aria-labelledby="checkout-title">
+      <h1 id="checkout-title">Checkout</h1>
+
+      <ol class="checkout-steps" id="checkout-steps" aria-label="Pasos de checkout">
+        <li class="is-active">1. Datos personales</li>
+        <li>2. Direccion de entrega</li>
+        <li>3. Pago con tarjeta</li>
+      </ol>
+
+      <form id="checkout-form" class="checkout-form">
+        <section class="checkout-panel is-active" data-step="1">
+          <label for="full-name">Nombre completo</label>
+          <input id="full-name" name="fullName" type="text" required />
+
+          <label for="email">Correo electronico</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="phone">Telefono</label>
+          <input id="phone" name="phone" type="tel" required />
+        </section>
+
+        <section class="checkout-panel" data-step="2" hidden>
+          <label for="address">Direccion</label>
+          <input id="address" name="address" type="text" required />
+
+          <label for="city">Ciudad</label>
+          <input id="city" name="city" type="text" required />
+
+          <label for="zip">Codigo postal</label>
+          <input id="zip" name="zip" type="text" required />
+        </section>
+
+        <section class="checkout-panel" data-step="3" hidden>
+          <label for="card-name">Nombre en la tarjeta</label>
+          <input id="card-name" name="cardName" type="text" required />
+
+          <label for="card-number">Numero de tarjeta</label>
+          <input id="card-number" name="cardNumber" type="text" inputmode="numeric" required />
+
+          <div class="checkout-row">
+            <div>
+              <label for="card-exp">Vencimiento</label>
+              <input id="card-exp" name="cardExp" type="text" placeholder="MM/AA" required />
+            </div>
+            <div>
+              <label for="card-cvv">CVV</label>
+              <input id="card-cvv" name="cardCvv" type="password" inputmode="numeric" required />
+            </div>
+          </div>
+        </section>
+
+        <div class="checkout-actions">
+          <button id="checkout-prev" class="card-btn" type="button">Anterior</button>
+          <button id="checkout-next" class="work-submit" type="button">Siguiente</button>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer" aria-label="Pie de pagina">
+      <section class="footer-col" aria-labelledby="footer-categories">
+        <h2 id="footer-categories">Categorias</h2>
+        <ul>
+          <li><a href="#">Calzado</a></li>
+          <li><a href="#">Camisas</a></li>
+          <li><a href="#">Pantalones</a></li>
+          <li><a href="#">Accesorios</a></li>
+        </ul>
+      </section>
+      <section class="footer-col" aria-labelledby="footer-legal">
+        <h2 id="footer-legal">Legal</h2>
+        <ul>
+          <li><a href="#">Terminos y condiciones</a></li>
+          <li><a href="#">Politica de privacidad</a></li>
+          <li><a href="#">Sobre la marca</a></li>
+        </ul>
+      </section>
+      <section class="footer-col" aria-labelledby="footer-contact">
+        <h2 id="footer-contact">Contacto</h2>
+        <ul>
+          <li><a href="mailto:hello@desordre.com">hello@desordre.com</a></li>
+          <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+          <li>Paris, Francia</li>
+        </ul>
+      </section>
+      <section class="footer-col footer-col-work" aria-labelledby="footer-links">
+        <h2 id="footer-links">Navegacion</h2>
+        <a class="work-link" href="cart.html">Volver al carrito</a>
+      </section>
+    </footer>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>

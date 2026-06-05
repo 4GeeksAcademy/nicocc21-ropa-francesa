@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="meta.title">Desordre | Catalogo</title>
+    <meta
+      name="description"
+      content="Catalogo de productos Desordre con filtros por categoria y talla."
+      data-i18n-content="meta.description"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Principal">
+        <a class="logo" href="index.html" aria-label="Inicio">
+          <span class="logo-symbol" aria-hidden="true">
+            <svg viewBox="0 0 120 48" role="img" aria-label="Trazo neon del logo">
+              <path d="M8 37 L34 14 L58 28 L83 11 L108 30" />
+            </svg>
+          </span>
+          <span class="logo-text">Desordre</span>
+        </a>
+
+        <form class="search-wrap" role="search" aria-label="Buscar productos" data-i18n-aria-label="nav.searchAria">
+          <label for="catalog-search" class="sr-only" data-i18n="nav.searchLabel">Buscar producto</label>
+          <input
+            id="catalog-search"
+            name="search"
+            type="search"
+            placeholder="Buscar prendas"
+            data-i18n-placeholder="nav.searchPlaceholder"
+            autocomplete="off"
+          />
+        </form>
+
+        <div class="language-wrap">
+          <label for="catalog-language" class="sr-only" data-i18n="nav.languageLabel">Idioma</label>
+          <select id="catalog-language" class="language-select" aria-label="Seleccionar idioma">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+
+        <div class="account-menu">
+          <button id="catalog-account-btn" class="account-btn" type="button" aria-expanded="false" aria-controls="catalog-account-dropdown" data-i18n="nav.accountBtn">
+            Cuenta
+          </button>
+          <ul id="catalog-account-dropdown" class="account-dropdown" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="#" data-i18n="nav.accountProfile">Mi perfil</a></li>
+            <li role="none"><a role="menuitem" href="#" data-i18n="nav.accountOrders">Pedidos</a></li>
+            <li role="none"><a role="menuitem" href="#" data-i18n="nav.accountFavorites">Favoritos</a></li>
+            <li role="none"><a role="menuitem" href="cart.html" data-i18n="nav.accountCart">Carrito</a></li>
+            <li role="none"><a role="menuitem" href="#" data-i18n="nav.accountLogout">Cerrar sesion</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="catalog-main" aria-labelledby="catalog-title">
+      <header class="catalog-head">
+        <h1 id="catalog-title" data-i18n="catalog.title">Catalogo</h1>
+        <p data-i18n="catalog.subtitle">Explora la coleccion completa y filtra por categoria o talla.</p>
+      </header>
+
+      <section class="filter-bar" aria-label="Filtros de catalogo" data-i18n-aria-label="catalog.filtersAria">
+        <div class="filter-field">
+          <label for="category-filter" data-i18n="catalog.categoryLabel">Categoria</label>
+          <select id="category-filter">
+            <option value="all" data-i18n="filters.all">Todas</option>
+            <option value="calzado" data-i18n="filters.calzado">Calzado</option>
+            <option value="camisas" data-i18n="filters.camisas">Camisas</option>
+            <option value="pantalones" data-i18n="filters.pantalones">Pantalones</option>
+            <option value="accesorios" data-i18n="filters.accesorios">Accesorios</option>
+          </select>
+        </div>
+
+        <div class="filter-field">
+          <label for="size-filter" data-i18n="catalog.sizeLabel">Talla</label>
+          <select id="size-filter">
+            <option value="all" data-i18n="filters.all">Todas</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+            <option value="43">43</option>
+          </select>
+        </div>
+      </section>
+
+      <ul id="catalog-grid" class="catalog-grid" aria-live="polite"></ul>
+    </main>
+
+    <footer class="site-footer" aria-label="Pie de pagina">
+      <section class="footer-col" aria-labelledby="footer-categories">
+        <h2 id="footer-categories" data-i18n="footer.categoriesTitle">Categorias</h2>
+        <ul>
+          <li><a href="#" data-i18n="footer.catShoes">Calzado</a></li>
+          <li><a href="#" data-i18n="footer.catShirts">Camisas</a></li>
+          <li><a href="#" data-i18n="footer.catPants">Pantalones</a></li>
+          <li><a href="#" data-i18n="footer.catAccessories">Accesorios</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col" aria-labelledby="footer-legal">
+        <h2 id="footer-legal" data-i18n="footer.legalTitle">Legal</h2>
+        <ul>
+          <li><a href="#" data-i18n="footer.terms">Terminos y condiciones</a></li>
+          <li><a href="#" data-i18n="footer.privacy">Politica de privacidad</a></li>
+          <li><a href="#" data-i18n="footer.about">Sobre la marca</a></li>
+        </ul>
+      </section>
+
+      <section class="footer-col" aria-labelledby="footer-contact">
+        <h2 id="footer-contact" data-i18n="footer.contactTitle">Contacto</h2>
+        <ul>
+          <li><a href="mailto:hello@desordre.com">hello@desordre.com</a></li>
+          <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+          <li data-i18n="footer.location">Paris, Francia</li>
+        </ul>
+      </section>
+
+      <section class="footer-col footer-col-work" aria-labelledby="footer-links">
+        <h2 id="footer-links" data-i18n="footer.navTitle">Navegacion</h2>
+        <a class="work-link" href="index.html" data-i18n="footer.backHome">Volver a Home</a>
+      </section>
+    </footer>
+
+    <div id="catalog-modal" class="product-modal" role="dialog" aria-modal="true" aria-labelledby="catalog-modal-title" hidden>
+      <div class="product-modal-dialog">
+        <button id="catalog-modal-close" class="product-modal-close" type="button" data-i18n="modal.close">Cerrar</button>
+        <h2 id="catalog-modal-title" class="product-modal-title"></h2>
+        <div class="product-modal-image-wrap">
+          <img id="catalog-modal-image" src="" alt="" />
+        </div>
+        <div class="product-modal-nav" aria-label="Navegacion de imagenes" data-i18n-aria-label="modal.navAria">
+          <button id="catalog-modal-prev" class="card-btn" type="button" data-i18n="modal.prev">Anterior</button>
+          <p class="product-modal-hint" data-i18n="modal.hint">Usa las flechas del teclado para navegar</p>
+          <button id="catalog-modal-next" class="card-btn" type="button" data-i18n="modal.next">Siguiente</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="catalog.js"></script>
+  </body>
+</html>
