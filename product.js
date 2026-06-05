@@ -211,7 +211,7 @@ function addCurrentProductToCart(quantity) {
       names,
       price: 89,
       qty: quantity,
-      image: "vestido.webp",
+      image: "assets/images/vestido.webp",
     });
   }
 

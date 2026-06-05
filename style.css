@@ -38,7 +38,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("invertidas.png") center center / cover no-repeat;
+  background: url("assets/images/invertidas.png") center center / cover no-repeat;
   pointer-events: none;
 }
 
@@ -265,7 +265,7 @@ main,
   border-radius: 20px;
   background:
     linear-gradient(180deg, rgba(10, 8, 14, 0.16), rgba(10, 8, 14, 0.62)),
-    url("gorra desordre.png") center center / cover no-repeat;
+    url("assets/images/gorra desordre.png") center center / cover no-repeat;
   overflow: hidden;
 }
 

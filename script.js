@@ -9,15 +9,15 @@ const products = [
     type: "new",
     images: [
       {
-        src: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=900",
+        src: "assets/images/concepto-estilo-vida-personas-modelo-moda-hombre-guapo_118342-32194.webp",
         alt: "Bomber negra vista frontal",
       },
       {
-        src: "https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&w=900",
+        src: "assets/images/depositphotos_21435719-stock-photo-sexy-man-and-woman-dressed.webp",
         alt: "Bomber negra vista lateral",
       },
       {
-        src: "https://images.pexels.com/photos/532220/pexels-photo-532220.jpeg?auto=compress&cs=tinysrgb&w=900",
+        src: "assets/images/young-woman-man-wearing-blank-600nw-2692295445.webp",
         alt: "Bomber negra vista trasera",
       },
     ],
@@ -32,15 +32,15 @@ const products = [
     type: "new",
     images: [
       {
-        src: "bolso.webp",
+        src: "assets/images/bolso.webp",
         alt: "Bolso negro minimal en primer plano",
       },
       {
-        src: "https://images.pexels.com/photos/7691216/pexels-photo-7691216.jpeg?auto=compress&cs=tinysrgb&w=900",
+        src: "assets/images/ropa-de-moda-femenina-plana-lay-cuadrado.webp",
         alt: "Top tejido oscuro vista lateral",
       },
       {
-        src: "https://images.pexels.com/photos/7691235/pexels-photo-7691235.jpeg?auto=compress&cs=tinysrgb&w=900",
+        src: "assets/images/fashion-2208045__340.webp",
         alt: "Top tejido oscuro vista trasera",
       },
     ],
@@ -55,15 +55,15 @@ const products = [
     type: "new",
     images: [
       {
-        src: "vestido.webp",
+        src: "assets/images/vestido.webp",
         alt: "Vestido oscuro de corte urbano",
       },
       {
-        src: "https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg?auto=compress&cs=tinysrgb&w=900",
+        src: "assets/images/63217870-prendas-de-vestir-y-accesorios-para-hombres-y-mujeres-listos-para-viajar-estilo-de-vida.webp",
         alt: "Pantalon cargo oscuro vista lateral",
       },
       {
-        src: "https://images.pexels.com/photos/1986993/pexels-photo-1986993.jpeg?auto=compress&cs=tinysrgb&w=900",
+        src: "assets/images/a200e4deb28e47c48330a94e453bdec8.webp",
         alt: "Pantalon cargo oscuro vista trasera",
       },
     ],
@@ -78,7 +78,7 @@ const products = [
     type: "best",
     images: [
       {
-        src: "feliz-caballero-bien-vestido-tener-fotos-en-el-estudio.webp",
+        src: "assets/images/feliz-caballero-bien-vestido-tener-fotos-en-el-estudio.webp",
         alt: "Hombre bien vestido en estudio",
       },
     ],
@@ -93,7 +93,7 @@ const products = [
     type: "best",
     images: [
       {
-        src: "fashionable-woman-in-colorful-shirt.webp",
+        src: "assets/images/fashionable-woman-in-colorful-shirt.webp",
         alt: "Mujer con camisa colorida en retrato",
       },
     ],
@@ -108,7 +108,7 @@ const products = [
     type: "best",
     images: [
       {
-        src: "vestido-y-listo-para-ir-tras-mis-sueños.webp",
+        src: "assets/images/vestido-y-listo-para-ir-tras-mis-sueños.webp",
         alt: "Vestido moderno de estilo urbano",
       },
     ],
