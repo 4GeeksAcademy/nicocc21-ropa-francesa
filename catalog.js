@@ -45,6 +45,7 @@ const translations = {
       filtersAria: "Filtros de catalogo",
       categoryLabel: "Categoria",
       sizeLabel: "Talla",
+      sortLabel: "Ordenar por",
       sizeUnique: "Unica",
       empty: "No se encontraron productos con esos filtros.",
       addToCart: "Agregar",
@@ -55,6 +56,11 @@ const translations = {
       camisas: "Camisas",
       pantalones: "Pantalones",
       accesorios: "Accesorios",
+    },
+    sort: {
+      default: "Destacados",
+      priceAsc: "Precio: menor a mayor",
+      priceDesc: "Precio: mayor a menor",
     },
     footer: {
       categoriesTitle: "Categorias",
@@ -130,6 +136,7 @@ const translations = {
       filtersAria: "Catalog filters",
       categoryLabel: "Category",
       sizeLabel: "Size",
+      sortLabel: "Sort by",
       sizeUnique: "One size",
       empty: "No products found with those filters.",
       addToCart: "Add",
@@ -140,6 +147,11 @@ const translations = {
       camisas: "Shirts",
       pantalones: "Pants",
       accesorios: "Accessories",
+    },
+    sort: {
+      default: "Featured",
+      priceAsc: "Price: low to high",
+      priceDesc: "Price: high to low",
     },
     footer: {
       categoriesTitle: "Categories",
@@ -215,6 +227,7 @@ const translations = {
       filtersAria: "Filtres du catalogue",
       categoryLabel: "Categorie",
       sizeLabel: "Taille",
+      sortLabel: "Trier par",
       sizeUnique: "Unique",
       empty: "Aucun produit trouve avec ces filtres.",
       addToCart: "Ajouter",
@@ -225,6 +238,11 @@ const translations = {
       camisas: "Chemises",
       pantalones: "Pantalons",
       accesorios: "Accessoires",
+    },
+    sort: {
+      default: "En vedette",
+      priceAsc: "Prix : croissant",
+      priceDesc: "Prix : decroissant",
     },
     footer: {
       categoriesTitle: "Categories",
@@ -293,6 +311,7 @@ let searchDebounceId = null;
 const grid = document.getElementById("catalog-grid");
 const categoryFilter = document.getElementById("category-filter");
 const sizeFilter = document.getElementById("size-filter");
+const sortFilter = document.getElementById("sort-filter");
 const searchInput = document.getElementById("catalog-search");
 const accountBtn = document.getElementById("catalog-account-btn");
 const accountDropdown = document.getElementById("catalog-account-dropdown");
@@ -440,15 +459,24 @@ function addProductToCart(productId, quantity = 1) {
 function getFilteredProducts() {
   const category = categoryFilter instanceof HTMLSelectElement ? categoryFilter.value : "all";
   const size = sizeFilter instanceof HTMLSelectElement ? sizeFilter.value : "all";
+  const sort = sortFilter instanceof HTMLSelectElement ? sortFilter.value : "default";
   const query = searchInput instanceof HTMLInputElement ? searchInput.value.trim().toLowerCase() : "";
 
-  return catalogProducts.filter((product) => {
+  const filteredProducts = catalogProducts.filter((product) => {
     const categoryMatch = category === "all" || product.category === category;
     const sizeMatch = size === "all" || product.size === size;
     const searchSource = `${getProductName(product)} ${t(`categories.${product.category}`)}`.toLowerCase();
     const searchMatch = !query || searchSource.includes(query);
     return categoryMatch && sizeMatch && searchMatch;
   });
+
+  if (sort === "price-asc") {
+    filteredProducts.sort((firstProduct, secondProduct) => firstProduct.price - secondProduct.price);
+  } else if (sort === "price-desc") {
+    filteredProducts.sort((firstProduct, secondProduct) => secondProduct.price - firstProduct.price);
+  }
+
+  return filteredProducts;
 }
 
 function renderCatalog() {
@@ -534,6 +562,10 @@ if (categoryFilter instanceof HTMLSelectElement) {
 
 if (sizeFilter instanceof HTMLSelectElement) {
   sizeFilter.addEventListener("change", renderCatalog);
+}
+
+if (sortFilter instanceof HTMLSelectElement) {
+  sortFilter.addEventListener("change", renderCatalog);
 }
 
 if (searchInput instanceof HTMLInputElement) {
