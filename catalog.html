@@ -102,6 +102,15 @@
             <option value="43">43</option>
           </select>
         </div>
+
+        <div class="filter-field">
+          <label for="sort-filter" data-i18n="catalog.sortLabel">Ordenar por</label>
+          <select id="sort-filter">
+            <option value="default" data-i18n="sort.default">Destacados</option>
+            <option value="price-asc" data-i18n="sort.priceAsc">Precio: menor a mayor</option>
+            <option value="price-desc" data-i18n="sort.priceDesc">Precio: mayor a menor</option>
+          </select>
+        </div>
       </section>
 
       <ul id="catalog-grid" class="catalog-grid" aria-live="polite"></ul>
