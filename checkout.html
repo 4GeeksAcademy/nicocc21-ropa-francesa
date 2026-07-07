@@ -67,24 +67,24 @@
       <form id="checkout-form" class="checkout-form">
         <section class="checkout-panel is-active" data-step="1">
           <label for="full-name">Nombre completo</label>
-          <input id="full-name" name="fullName" type="text" required />
+          <input id="full-name" name="fullName" type="text" autocomplete="name" required />
 
           <label for="email">Correo electronico</label>
-          <input id="email" name="email" type="email" required />
+          <input id="email" name="email" type="email" autocomplete="email" required />
 
           <label for="phone">Telefono</label>
-          <input id="phone" name="phone" type="tel" required />
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required />
         </section>
 
         <section class="checkout-panel" data-step="2" hidden>
           <label for="address">Direccion</label>
-          <input id="address" name="address" type="text" required />
+          <input id="address" name="address" type="text" autocomplete="street-address" required />
 
           <label for="city">Ciudad</label>
-          <input id="city" name="city" type="text" required />
+          <input id="city" name="city" type="text" autocomplete="address-level2" required />
 
           <label for="zip">Codigo postal</label>
-          <input id="zip" name="zip" type="text" required />
+          <input id="zip" name="zip" type="text" autocomplete="postal-code" required />
         </section>
 
         <section class="checkout-panel" data-step="3" hidden>
